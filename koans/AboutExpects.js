@@ -1,18 +1,19 @@
 describe('Expect에 관해서', function () {
   /*
-   Codestates의 첫 번째 스프린트 JavaScriptKoans에 오신 것을 환영합니다.
-   지금부터 이전에 코플릿에서 여러분의 에러를 검사하던 유닛 테스트를 수정하며 직접 통과를 시켜야 합니다.
-   단순히 테스트를 통과시키기는 쉽지만, "왜 통과하는지" 꼭 고민하는 시간이 되었으면 합니다.
+   코드스테이츠의 첫 번째 스프린트 JavaScriptKoans에 오신 것을 환영합니다.
+   이번 스프린트에서는 이전에 코플릿에서 여러분의 에러를 검사하던 유닛 테스트(unit test)를 직접 수정하여 통과 시켜야 합니다.
+   단순히 테스트를 통과하기는 쉽지만, "왜 통과하는지" 꼭 고민하는 시간이 되었으면 합니다.
 
-   expect 함수에 대해서 배워봅시다. 우리가 이 함수를 활용하여 앞으로 모든 Koans 과제를 완성하게 될 것입니다.
-   expect는 assertion 함수 중 하나로, 우리가 작성해야 하는 바람직한 코드는 expect 함수에 연결되는 matcher가 되어야 한다는 "assertion(주장)"을 담고 있습니다.
+   AboutExpects.js 에서는 expect 함수에 대해서 배우게 됩니다. 
+   우리는 이 함수를 활용하여 앞으로 모든 Koans 과제를 완성하게 될 것입니다.
+   expect는 assertion 함수 중 하나로, 여러분이 작성한 코드의 결과가 expect 함수의 첫 번째 인자와 match 되어야 한다는 "assertion(주장)"을 담고 있습니다.
    직접 문제를 풀어보면서 expect에 대해서 알아봅시다.
    */
 
   it('테스트 하고 싶은 값(첫번째 인자)의 truthy 여부 검사를 학습합니다.', function () {
     /* 
     첫 문제는 우선 그냥 풀어봅시다.
-    expect 함수의 첫 번째 인자에 "true"를 넣어서 테스트를 통과시키세요.
+    expect 함수의 첫 번째 인자에 false 대신 true를 넣어서 테스트를 통과시키세요.
     expect(true).toBeTruthy();
 
     음, 그런데 1을 넣어보는 것은 어떻까요? 테스트를 통과할까요? 풀어보기 전에 주석으로 예상되는 결과를 적어두세요.
@@ -20,7 +21,7 @@ describe('Expect에 관해서', function () {
     통과한다면, 왜 통과하는지 고민해보세요.
     */
 
-    expect().toBeTruthy(); // TODO : expect의 첫 번째 인자를 테스트가 통과될 수 있도록 첫 번째 인자를 수정하세요.
+    expect(false).toBeTruthy(); // TODO : expect의 첫 번째 인자를 테스트가 통과될 수 있도록 첫 번째 인자를 수정하세요.
   });
 
   /*
@@ -40,7 +41,7 @@ describe('Expect에 관해서', function () {
     expect(actualValue == expectedValue).toBeTruthy();
   });
 
-  // 하지만 "type"도 같은지 확인해야할 경우도 있겠죠.
+  // 하지만 타입 같은지 확인해야할 경우도 있겠죠.
   // == 은 이제 그만 잊어버립시다!
   it('두 값의 타입까지 검사할 수 있는 비교연산자 ===를 학습합니다.', function () {
     let expectedValue = FILL_ME_IN; // TODO
