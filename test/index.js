@@ -9,7 +9,6 @@ describe('Bare Minimum Requirements', function () {
   require('../koans/AboutSpreadSyntax.js');
   require('../koans/AboutFunctions.js');
   require('../koans/AboutObjects.js');
-  require('../koans/AboutArrayMethods.js');
 });
 
 /*
