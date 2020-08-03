@@ -51,6 +51,6 @@ describe('Spread syntax 에 대하여', function () {
   it('생성자 함수에도 사용할 수 있습니다.', function () {
     const spread = [1970, 0, 1]; // 1 Jan 1970
     const whenComputerStarts = new Date(spread); // TODO
-    expect(whenComputerStarts).toBe(new DataCue(1970, 0, 1));
+    expect(whenComputerStarts).toEqual(new Date(1970, 0, 1));
   });
 });
