@@ -12,11 +12,11 @@ exec("cat results.json", (err, json, stderr) => {
 
   const options = {
     hostname: URCLASS_URL,
-    path: `/Prod/submit/`,
+    path: `/production/submit/sprint`,
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
-    }
+      "Content-Type": "application/json",
+    },
   };
 
   console.log(JSON.stringify(options));
@@ -26,16 +26,16 @@ exec("cat results.json", (err, json, stderr) => {
     assessment_id: ASSESSMENT_ID,
     githubUsername: username,
     type: "jasmine",
-    result: result
+    result: result,
   };
 
   makeRequest(options, body);
 });
 
 function makeRequest(options, body) {
-  const req = https.request(options, res => {
+  const req = https.request(options, (res) => {
     let data;
-    res.on("data", chunk => {
+    res.on("data", (chunk) => {
       data += chunk;
     });
     res.on("end", () => {
@@ -49,7 +49,7 @@ function makeRequest(options, body) {
     });
   });
 
-  req.on("error", e => {
+  req.on("error", (e) => {
     console.log(e);
     throw new Error("data did not send to urclass");
   });
