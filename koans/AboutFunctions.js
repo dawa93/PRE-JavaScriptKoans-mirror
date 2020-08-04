@@ -1,34 +1,34 @@
-describe('Function에 관해서', function () {
-  it('function을 선언하는 법을 학습합니다.', function () {
+describe("Function에 관해서", function() {
+  it("function을 선언하는 법을 학습합니다.", function() {
     function add(a, b) {
       return a + b;
     }
 
-    expect(add(1, 2)).toBe(FILL_ME_IN);
+    expect(add(1, 2)).toBe(3);
   });
 
-  it('함수 scope에 관해서 학습합니다.', function () {
-    let message = 'Outer';
+  it("함수 scope에 관해서 학습합니다.", function() {
+    let message = "Outer";
 
     function getMessage() {
       return message;
     }
 
     function overrideMessage() {
-      let message = 'Inner';
+      let message = "Inner";
       return message;
     }
 
-    expect(getMessage()).toBe(FILL_ME_IN);
-    expect(overrideMessage()).toBe(FILL_ME_IN);
-    expect(message).toBe(FILL_ME_IN);
+    expect(getMessage()).toBe("Outer");
+    expect(overrideMessage()).toBe("Inner");
+    expect(message).toBe("Outer");
   });
 
-  it('scope chain에 관해 학습합니다.', function () {
-    let variable = 'top-level';
+  it("scope chain에 관해 학습합니다.", function() {
+    let variable = "top-level";
 
     function parentfunction() {
-      let variable = 'local';
+      let variable = "local";
 
       function childfunction() {
         return variable;
@@ -36,12 +36,12 @@ describe('Function에 관해서', function () {
 
       return childfunction();
     }
-    expect(parentfunction()).toBe(FILL_ME_IN);
+    expect(parentfunction()).toBe("local");
   });
 
-  it('클로저 함수에 관해 학습합니다.', function () {
+  it("클로저 함수에 관해 학습합니다.", function() {
     function makeIncreaseByFunction(increaseByAmount) {
-      return function (numberToIncrease) {
+      return function(numberToIncrease) {
         return numberToIncrease + increaseByAmount;
       };
     }
@@ -49,24 +49,24 @@ describe('Function에 관해서', function () {
     const increaseBy3 = makeIncreaseByFunction(3);
     const increaseBy5 = makeIncreaseByFunction(5);
 
-    expect(increaseBy3(10) + increaseBy5(10)).toBe(FILL_ME_IN);
+    expect(increaseBy3(10) + increaseBy5(10)).toBe(28);
   });
 
-  it('함수에서 전달인자를 다루는법을 학습합니다.', function () {
+  it("함수에서 전달인자를 다루는법을 학습합니다.", function() {
     function returnFirstArg(firstArg) {
       return firstArg;
     }
 
-    expect(returnFirstArg('first', 'second', 'third')).toBe(FILL_ME_IN);
+    expect(returnFirstArg("first", "second", "third")).toBe("first");
 
     function returnSecondArg(firstArg, secondArg) {
       return secondArg;
     }
 
-    expect(returnSecondArg('only give first arg')).toBe(FILL_ME_IN);
+    expect(returnSecondArg("only give first arg")).toBe(undefined);
 
     function returnAllArgs(...args) {
-      let argumentsText = '';
+      let argumentsText = "";
 
       for (let i = 0; i < args.length; i += 1) {
         argumentsText = argumentsText + args[i];
@@ -75,22 +75,22 @@ describe('Function에 관해서', function () {
       return argumentsText;
     }
 
-    expect(returnAllArgs('first', 'second', 'third')).toBe(FILL_ME_IN);
+    expect(returnAllArgs("first", "second", "third")).toBe("firstsecondthird");
   });
 
-  it('함수 표현식(변수에 함수를 선언하는 방법)을 학습합니다.', function () {
-    const appendRules = function (name) {
-      return name + ' rules!';
+  it("함수 표현식(변수에 함수를 선언하는 방법)을 학습합니다.", function() {
+    const appendRules = function(name) {
+      return name + " rules!";
     };
 
-    const appendDoubleRules = function (name) {
-      return name + ' totally rules!';
+    const appendDoubleRules = function(name) {
+      return name + " totally rules!";
     };
 
     const praiseSinger = { givePraise: appendRules };
-    expect(praiseSinger.givePraise('John')).toBe(FILL_ME_IN);
+    expect(praiseSinger.givePraise("John")).toBe("John rules!");
 
     praiseSinger.givePraise = appendDoubleRules;
-    expect(praiseSinger.givePraise('Mary')).toBe(FILL_ME_IN);
+    expect(praiseSinger.givePraise("Mary")).toBe("Mary totally rules!");
   });
 });
