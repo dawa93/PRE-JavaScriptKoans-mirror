@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>Javascript Koans</title>
-    <link rel="stylesheet" type="text/css" href="lib/jasmine/jskoans-jasmine.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="lib/jasmine/jskoans-jasmine.css"
+    />
     <script src="lib/jasmine/jasmine.js"></script>
     <script src="lib/jasmine/jasmine-html.js"></script>
     <script src="lib/jasmine/jskoans-jasmine-html.js"></script>
@@ -15,17 +19,17 @@
     <script src="koans/AboutSpreadSyntax.js"></script>
     <script src="koans/AboutFunctions.js"></script>
     <script src="koans/AboutObjects.js"></script>
-    <!-- <script src="koans/Advanced-AboutAdvancedArrayMethods.js"></script>
+    <script src="koans/Advanced-AboutAdvancedArrayMethods.js"></script>
     <script src="koans/Advanced-AboutMutability.js"></script>
-  <script src="koans/Advanced-AboutInheritance.js"></script>
-  <script src="koans/Advanced-AboutApplyingWhatWeHaveLearnt.js"></script> -->
+    <script src="koans/Advanced-AboutInheritance.js"></script>
+    <script src="koans/Advanced-AboutApplyingWhatWeHaveLearnt.js"></script>
   </head>
   <body>
     <script>
       jasmine.getEnv().addReporter(new JsKoansReporter());
       jasmine.getEnv().execute();
-      let passedTestHider = function () {
-        document.getElementById('__jsKoans_showPassed__').click();
+      let passedTestHider = function() {
+        document.getElementById("__jsKoans_showPassed__").click();
       };
       // setTimeout(passedTestHider, 100) //uncomment me in order to hide passed tests by default
     </script>
